@@ -62,6 +62,25 @@ class ProjectMetadata:
 
 # Central project registry
 _PROJECT_REGISTRY: list[ProjectMetadata] = [
+    # Core Libraries
+    ProjectMetadata(
+        artifact_name="clr",
+        cmake_target="core-hip",
+        build_subdir="core/clr",
+        component_group="core",
+    ),
+    ProjectMetadata(
+        artifact_name="ocl-clr",
+        cmake_target="core-ocl",
+        build_subdir="core/ocl-clr",
+        component_group="core",
+    ),
+    ProjectMetadata(
+        artifact_name="ROCR-Runtime",
+        cmake_target="core-runtime",
+        build_subdir="core/ROCR-Runtime",
+        component_group="core",
+    ),
     # ML Libraries
     ProjectMetadata(
         artifact_name="hipdnn",
@@ -81,6 +100,24 @@ _PROJECT_REGISTRY: list[ProjectMetadata] = [
         artifact_name="composable-kernel",
         cmake_target="composable_kernel",
         build_subdir="ml-libs/composable_kernel",
+        component_group="ml-libs",
+    ),
+    ProjectMetadata(
+        artifact_name="miopenprovider",
+        cmake_target="miopenprovider",
+        build_subdir="ml-libs/miopenprovider",
+        component_group="ml-libs",
+    ),
+    ProjectMetadata(
+        artifact_name="hipblasltprovider",
+        cmake_target="hipblasltprovider",
+        build_subdir="ml-libs/hipblasltprovider",
+        component_group="ml-libs",
+    ),
+    ProjectMetadata(
+        artifact_name="fusilliprovider",
+        cmake_target="fusilliprovider",
+        build_subdir="ml-libs/fusilliprovider",
         component_group="ml-libs",
     ),
     # Math Libraries
@@ -110,6 +147,26 @@ _PROJECT_REGISTRY: list[ProjectMetadata] = [
         build_subdir="math-libs/FFT",
         component_group="math-libs",
         library_soname="librocfft.so*",
+    ),
+    ProjectMetadata(
+        artifact_name="rocwmma",
+        cmake_target="rocWMMA",
+        build_subdir="math-libs/rocWMMA",
+        component_group="math-libs",
+        library_soname="librocwmma.so*",
+    ),
+    ProjectMetadata(
+        artifact_name="support",
+        cmake_target="mxDataGenerator",
+        build_subdir="math-libs/support/mxDataGenerator",
+        component_group="math-libs",
+    ),
+    # Third-party
+    ProjectMetadata(
+        artifact_name="host-suite-sparse",
+        cmake_target="SuiteSparse",
+        build_subdir="third-party/host-suite-sparse",
+        component_group="third-party",
     ),
 ]
 

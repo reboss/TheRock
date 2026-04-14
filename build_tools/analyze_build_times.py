@@ -36,29 +36,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional
 
+from therock_projects import NAME_MAPPING
+
 # =============================================================================
 # Configuration
 # =============================================================================
-
-# Build name -> Display name mapping
-NAME_MAPPING = {
-    "clr": "core-hip",
-    "ocl-clr": "core-ocl",
-    "ROCR-Runtime": "core-runtime",
-    "blas": "rocBLAS",
-    "prim": "rocPRIM",
-    "fft": "rocFFT",
-    "rand": "rocRAND",
-    "miopen": "MIOpen",
-    "hipdnn": "hipDNN",
-    "composable-kernel": "composable_kernel",
-    "support": "mxDataGenerator",
-    "host-suite-sparse": "SuiteSparse",
-    "rocwmma": "rocWMMA",
-    "miopenprovider": "miopenprovider",
-    "hipblasltprovider": "hipblasltprovider",
-    "fusilliprovider": "fusilliprovider",
-}
 
 # Top-level directories for ROCm components
 ROCM_COMPONENT_DIRS = {
